@@ -10,6 +10,22 @@ cd ~/dotfiles
 ./install.sh
 ```
 
+### 테마 커스터마이징
+
+기본값 대신 원하는 테마를 지정해서 설치할 수 있습니다.
+
+```bash
+./install.sh --ghostty-theme "Dracula" --eza-theme "gruvbox-dark" --omz-theme "agnoster"
+```
+
+| 옵션 | 기본값 | 설명 |
+|------|--------|------|
+| `--ghostty-theme` | `Nord Light` | Ghostty 테마 이름 |
+| `--eza-theme` | `frost` | eza 테마 ([eza-community/eza-themes](https://github.com/eza-community/eza-themes) 기준) |
+| `--omz-theme` | `aphrodite` | oh-my-zsh 테마 이름 |
+
+> 이미 설치된 환경에서 재실행해도 안전합니다 (멱등성 보장).
+
 ## 설치 내용
 
 ### Terminal
@@ -34,8 +50,12 @@ cd ~/dotfiles
 | nvm | Node.js 버전 관리 |
 | bun | JavaScript 런타임 / 패키지 매니저 |
 | gh | GitHub CLI |
+| git-flow | Git Flow 브랜치 전략 도구 |
 | fzf | 퍼지 파인더 (Ctrl+T, Ctrl+R) |
+| jq | JSON 파싱 / 처리 |
+| vim | 터미널 에디터 |
 | btop / htop | 시스템 모니터 |
+| nmap | 네트워크 스캐너 |
 
 ## 구조
 
@@ -48,7 +68,7 @@ cd ~/dotfiles
 ├── ghostty/
 │   └── config        # Ghostty 설정 (테마, 폰트, 단축키 등)
 └── eza/
-    └── theme.yml     # eza gruvbox-dark 컬러 테마
+    └── theme.yml     # eza 컬러 테마 (기본값: frost)
 ```
 
 ## Ghostty 주요 설정
@@ -56,9 +76,12 @@ cd ~/dotfiles
 | 설정 | 값 |
 |------|----|
 | 테마 | Nord Light |
-| 폰트 | Hack Nerd Font 14pt |
+| 폰트 | Hack Nerd Font 14pt (font-thicken 활성화) |
 | Quick Terminal | `Cmd + `` |
 | Shell integration | cursor, sudo, title |
+| 선택 시 클립보드 복사 | 활성화 (copy-on-select) |
+| 커서 모양 | block |
+| 패딩 | x: 8px, y: 8px |
 
 ## 개인 alias 관리
 
